@@ -11,7 +11,6 @@ export class ProfileComponent implements OnInit {
     'slidesToShow': 4,
     'slidesToScroll': 1,
     'autoplay': true,
-    'dots': true,
     'speed': 300,
     'vertical': true,
     'responsive': [
@@ -21,16 +20,15 @@ export class ProfileComponent implements OnInit {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: true
+          dots: false
         }
       },
       {
         breakpoint: 885,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
           slidesToScroll: 2,
-          arrows: false,
-          dots: false
+          dots: false,
         }
       },
       {
@@ -49,5 +47,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  afterChange(e) {
+    console.log('afterChange');
+  }
 }

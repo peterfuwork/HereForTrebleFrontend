@@ -1,7 +1,7 @@
 .profile{
     .header {
         text-align: center;
-        
+
     }
 
     .imageWrapper {
@@ -23,7 +23,17 @@
     }
 
     .carouselProfile {
-
+      .carouselProfileWrapper {
+        max-width: 150px;
+        margin: 0 auto;
+        position: relative;
+        h2 {
+          writing-mode: vertical-rl;
+          transform: rotate(-180deg);
+          position: absolute;
+          left: -83px;
+          top: 78px;
+        }
         .carousel {
 
             .slide {
@@ -34,5 +44,6 @@
 
             }
         }
+      }
     }
 }
