@@ -1,0 +1,38 @@
+.profile{
+    .header {
+        text-align: center;
+        
+    }
+
+    .imageWrapper {
+        text-align: center;
+        margin: 1rem;
+
+        .profileImage {
+            max-width: 300px;
+        }
+    }
+
+    .profileInfo {
+        max-width: 200px;
+        margin: 0 auto;
+        .title {
+            font-weight: bold;
+        }
+
+    }
+
+    .carouselProfile {
+
+        .carousel {
+
+            .slide {
+
+                .img {
+                    max-width: 150px;
+                }
+
+            }
+        }
+    }
+}
