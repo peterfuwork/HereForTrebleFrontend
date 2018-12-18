@@ -1,3 +1,58 @@
-<p>
-  profile works!
-</p>
+<div class="container-fluid profile">
+  <div class="row">
+    <div class="col-xs-12 header">
+      <h3>Account Overview</h3>
+    </div>
+    <div class="col-sm-8">
+
+      <div class="imageWrapper">
+        <img class="profileImage" src="https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/41713464_10106428018276743_5733823473789173760_n.jpg?_nc_cat=107&_nc_ht=scontent-sjc3-1.xx&oh=61615fbcca5f854ecde5f58e1d23fd24&oe=5CA0AE34">
+      </div>
+      <div>
+        <ul>
+          <div class="profileInfo"><span class="title">First Name:</span> Sonja</div>
+          <div class="profileInfo"><span class="title">Last Name:</span> Chacon</div>
+          <div class="profileInfo"><span class="title">Email:</span> sonja@gmail.com</div>
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm-4 carouselProfile">
+      <div>
+        <h2>Loved Artists</h2>
+        <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig" (afterChange)="afterChange($event)">
+          <div ngxSlickItem class="slide">
+            <img class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc6SOp1H83BiFlux_V0qJ71PkIQobkoigC_2gIseirmapA4vV6"
+              alt="" width="100%" />
+            <div class="name">Why</div>
+          </div>
+          <div ngxSlickItem class="slide">
+            <img class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc6SOp1H83BiFlux_V0qJ71PkIQobkoigC_2gIseirmapA4vV6"
+              alt="" width="100%" />
+            <div class="name">Why</div>
+          </div>
+          <div ngxSlickItem class="slide">
+            <img class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc6SOp1H83BiFlux_V0qJ71PkIQobkoigC_2gIseirmapA4vV6"
+              alt="" width="100%" />
+            <div class="name">Why</div>
+          </div>
+          <div ngxSlickItem class="slide">
+            <img class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc6SOp1H83BiFlux_V0qJ71PkIQobkoigC_2gIseirmapA4vV6"
+              alt="" width="100%" />
+            <div class="name">Why</div>
+          </div>
+          <div ngxSlickItem class="slide">
+            <img class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc6SOp1H83BiFlux_V0qJ71PkIQobkoigC_2gIseirmapA4vV6"
+              alt="" width="100%" />
+            <div class="name">Why</div>
+          </div>
+          <div ngxSlickItem class="slide">
+            <img class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc6SOp1H83BiFlux_V0qJ71PkIQobkoigC_2gIseirmapA4vV6"
+              alt="" width="100%" />
+            <div class="name">Why</div>
+          </div>
+        </ngx-slick>
+      </div>
+    </div>
+  </div>
+
+</div>
