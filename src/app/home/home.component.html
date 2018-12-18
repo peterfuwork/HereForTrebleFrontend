@@ -1,0 +1,27 @@
+<div class="search-form">
+  <form class="form">
+    <input
+      class="input"
+      type="text"
+      placeholder="search"
+      name="name"
+      [(ngModel)]="artist_name"
+      (input)="onSearchArtist($event)" />
+  </form>
+</div>
+<div class="showSpinner" *ngIf="showSpinner">
+  <img class="loading" src="./assets/loading.gif" alt="loading"/>
+</div>
+<div class="carousel-wrapper">
+  <ngx-slick *ngIf="artistsArr; else notExisting" class="carousel" #slickModal="slick-modal" [config]="slideConfig" (afterChange)="afterChange($event)">
+    <div ngxSlickItem *ngFor="let artist of artistsArr" class="slide">
+      <img class="img" src={{artist.image}} alt="" width="100%" />
+      <div class="name">{{artist.name}}</div>
+    </div>
+  </ngx-slick>
+  <ng-template #notExisting>
+    <div class="no-result">
+      No Result :(
+    </div>
+  </ng-template>
+</div>

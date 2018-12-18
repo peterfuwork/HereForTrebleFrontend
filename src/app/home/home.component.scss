@@ -1,0 +1,53 @@
+
+
+.search-form {
+  text-align:center;
+  max-width:500px;
+  margin: 10rem auto;
+  .form{
+    display:flex;
+    .input {
+      font-size: 4rem;
+      padding: 0 1rem;
+      width: 100%;
+      margin: 0 1rem;
+    }
+  }
+}
+
+.showSpinner {
+    text-align:center;
+  .loading {
+    width:50px;
+  }
+}
+
+.carousel-wrapper {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  .carousel {
+    .slick-slide {
+      margin: 1rem;
+      .img {
+        cursor:pointer;
+        height: 250px;
+        @media(max-width:885px) {
+          height: auto;
+        }
+      }
+      .loading {
+        width: 30px;
+        margin: 0 auto;
+      }
+      .name {
+        text-align:center;
+        margin:1rem 0;
+      }
+    }
+  }
+  .no-result {
+    text-align:center;
+    font-size:4rem;
+  }
+}
