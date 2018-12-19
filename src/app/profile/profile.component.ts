@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-profile',
@@ -6,6 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
+
+  userId = null;
+  userInfoWithFavArtists: any = [];
+  image = '';
+  firstName = '';
+  lastName = '';
+  email = '';
+  checkForEdit = false;
 
   slideConfig = {
     'slidesToShow': 4,
@@ -43,10 +52,34 @@ export class ProfileComponent implements OnInit {
     ]
   };
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) {
+    this.userId = 4;
+    this.httpClient.get(`http://herefortreble.herokuapp.com/joins/${this.userId}`)
+    .toPromise()
+    .then(data => {
+      this.userInfoWithFavArtists = data;
+      this.image = data[0].avatar;
+      this.firstName = data[0].first_name;
+      this.lastName = data[0].last_name;
+      this.email = data[0].email;
+      console.log(this.userInfoWithFavArtists);
+    })
+    .catch(console.log);
+  }
 
   ngOnInit() {
   }
+
+  onClickEdit(event: Event) {
+    event.preventDefault();
+    this.checkForEdit = true;
+  }
+
+  onClickSave(event: Event) {
+    event.preventDefault();
+    this.checkForEdit = false;
+  }
+
   afterChange(e) {
     console.log('afterChange');
   }

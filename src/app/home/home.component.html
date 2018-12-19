@@ -15,22 +15,9 @@
 <div class="carousel-wrapper">
   <ngx-slick *ngIf="artistsArr; else notExisting" class="carousel" #slickModal="slick-modal" [config]="slideConfig" (afterChange)="afterChange($event)">
     <div ngxSlickItem *ngFor="let artist of artistsArr" class="slide">
-      <img class="img" src={{artist.image}} alt="" width="100%" />
-      <div class="name">{{artist.name}}</div>
-    </div>
-    <div ngxSlickItem *ngFor="let artist of artistsArr" class="slide">
-      <img class="img" src={{artist.image}} alt="" width="100%" />
-      <div class="name">{{artist.name}}</div>
-    </div>
-    <div ngxSlickItem *ngFor="let artist of artistsArr" class="slide">
-      <img class="img" src={{artist.image}} alt="" width="100%" />
-      <div class="name">{{artist.name}}</div>
-    </div>
-    <div ngxSlickItem *ngFor="let artist of artistsArr" class="slide">
-      <img class="img" src={{artist.image}} alt="" width="100%" />
-      <div class="name">{{artist.name}}</div>
-    </div>
-    <div ngxSlickItem *ngFor="let artist of artistsArr" class="slide">
+      <div class="heart" (click)="onSaveArtist($event, artist.id, artist.name, artist.image)">
+        <span class="fa fa-heart"></span>
+      </div>
       <img class="img" src={{artist.image}} alt="" width="100%" />
       <div class="name">{{artist.name}}</div>
     </div>

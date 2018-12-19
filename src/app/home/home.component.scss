@@ -11,6 +11,7 @@
       padding: 0 1rem;
       width: 100%;
       margin: 0 1rem;
+      color:#000;
     }
   }
 }
@@ -28,7 +29,25 @@
   margin: 0 auto;
   .carousel {
     .slick-slide {
+      outline:none;
       margin: 1rem;
+      position:relative;
+      .heart{
+        display:block;
+        font-size:3rem;
+        color:#d0d3c5;
+        position:absolute;
+        right:8px;
+        cursor:pointer;
+        text-shadow:1px 3px 5px #000;
+        &.active{
+          color:#d73a31;
+          text-shadow:none;
+        }
+        &:active{
+          text-shadow:none;
+        }
+      }
       .img {
         cursor:pointer;
         height: 250px;

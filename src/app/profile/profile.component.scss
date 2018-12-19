@@ -1,25 +1,54 @@
 .profile{
     .header {
         text-align: center;
-
     }
-
-    .imageWrapper {
-        text-align: center;
-        margin: 1rem;
-
-        .profileImage {
+    .displayProfile{
+      .imageWrapper {
+          text-align: center;
+          margin: 1rem;
+          .profileImage {
+              max-width: 300px;
+              width:100%;
+          }
+      }
+      .profileInfoWrapper{
+          max-width: 300px;
+          margin: 1rem auto;
+          line-height: 2;
+        .profileInfo {
+          .title {
+              font-weight: bold;
+          }
+          a {
+            color:#d0d3c5;
+            text-decoration:none;
+            &:hover {
+              color:#fff;
+            }
+          }
+        }
+      }
+    }
+    .updateProfile{
+      margin:1rem;
+      .title {
+        max-width: 300px;
+        margin:1rem auto;
+      }
+        .profileInfo {
             max-width: 300px;
+            margin: 0 auto;
+            .title {
+                font-weight: bold;
+            }
+            input, button {
+              display: block;
+              margin: 1rem 0;
+              font-size:2rem;
+              padding:0 1rem;
+              color:#000;
+            }
         }
-    }
-
-    .profileInfo {
-        max-width: 200px;
-        margin: 0 auto;
-        .title {
-            font-weight: bold;
-        }
-
     }
 
     .carouselProfile {
@@ -27,21 +56,34 @@
         max-width: 150px;
         margin: 0 auto;
         position: relative;
+        text-align:center;
+        @media(max-width:767px){
+          max-width: 300px;
+        }
         h2 {
           writing-mode: vertical-rl;
           transform: rotate(-180deg);
           position: absolute;
           left: -83px;
           top: 78px;
+          @media(max-width:767px){
+            writing-mode: initial;
+            transform: initial;
+            position: initial;
+            left: initial;
+            top: initial;
+          }
         }
         .carousel {
-
             .slide {
-
                 .img {
                     max-width: 150px;
+                    cursor:pointer;
+                    margin: 0 auto;
                 }
-
+                .name{
+                  text-align:center;
+                }
             }
         }
       }

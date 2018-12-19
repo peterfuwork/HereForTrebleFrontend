@@ -4,55 +4,61 @@
       <h3>Account Overview</h3>
     </div>
     <div class="col-sm-8">
-
-      <div class="imageWrapper">
-        <img class="profileImage" src="https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/41713464_10106428018276743_5733823473789173760_n.jpg?_nc_cat=107&_nc_ht=scontent-sjc3-1.xx&oh=61615fbcca5f854ecde5f58e1d23fd24&oe=5CA0AE34">
+      <div *ngIf="!checkForEdit; else showUpdate" class="displayProfile">
+        <div class="imageWrapper">
+          <img class="profileImage" src="{{ image }}" />
+        </div>
+        <div class="profileInfoWrapper">
+          <div class="profileInfo"><span class="title">First Name:</span> {{ firstName }}</div>
+          <div class="profileInfo"><span class="title">Last Name:</span> {{ lastName }}</div>
+          <div class="profileInfo"><span class="title">Email:</span> {{ email }}</div>
+          <div class="profileInfo"><a href="#" (click)="onClickEdit($event)">Edit</a></div>
+        </div>
       </div>
-      <div>
-        <ul>
-          <div class="profileInfo"><span class="title">First Name:</span> Sonja</div>
-          <div class="profileInfo"><span class="title">Last Name:</span> Chacon</div>
-          <div class="profileInfo"><span class="title">Email:</span> sonja@gmail.com</div>
-        </ul>
-      </div>
+      <ng-template #showUpdate>
+        <div class="updateProfile">
+          <h4 class="title">Update Info:</h4>
+            <form>
+                <div class="profileInfo">
+                  <span class="title">First Name:</span>
+                  <input type="text" placeholder="first name" />
+                </div>
+                <div class="profileInfo">
+                  <span class="title">Last Name:</span>
+                  <input type="text" placeholder="last name" />
+                </div>
+                <div class="profileInfo">
+                  <span class="title">Email:</span>
+                  <input type="text" placeholder="email" />
+                </div>
+                <div class="profileInfo">
+                  <span class="title">Password:</span>
+                  <input type="password" placeholder="password" />
+                </div>
+                <div class="profileInfo">
+                  <span class="title">Image:</span>
+                  <input type="file" placeholder="new image" />
+                </div>
+                <div class="profileInfo">
+                  <button (click)="onClickSave($event)">Submit</button>
+                </div>
+            </form>
+          </div>
+        </ng-template>
     </div>
+
     <div class="col-sm-4 carouselProfile">
       <div class="carouselProfileWrapper">
         <h2>Loved Artists</h2>
         <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig" (afterChange)="afterChange($event)">
-          <div ngxSlickItem class="slide">
-            <img class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc6SOp1H83BiFlux_V0qJ71PkIQobkoigC_2gIseirmapA4vV6"
+          <div ngxSlickItem *ngFor="let favArtist of userInfoWithFavArtists" class="slide">
+            <img class="img" src="{{ favArtist.artist_img }}"
               alt="" width="100%" />
-            <div class="name">Why</div>
-          </div>
-          <div ngxSlickItem class="slide">
-            <img class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc6SOp1H83BiFlux_V0qJ71PkIQobkoigC_2gIseirmapA4vV6"
-              alt="" width="100%" />
-            <div class="name">Why</div>
-          </div>
-          <div ngxSlickItem class="slide">
-            <img class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc6SOp1H83BiFlux_V0qJ71PkIQobkoigC_2gIseirmapA4vV6"
-              alt="" width="100%" />
-            <div class="name">Why</div>
-          </div>
-          <div ngxSlickItem class="slide">
-            <img class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc6SOp1H83BiFlux_V0qJ71PkIQobkoigC_2gIseirmapA4vV6"
-              alt="" width="100%" />
-            <div class="name">Why</div>
-          </div>
-          <div ngxSlickItem class="slide">
-            <img class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc6SOp1H83BiFlux_V0qJ71PkIQobkoigC_2gIseirmapA4vV6"
-              alt="" width="100%" />
-            <div class="name">Why</div>
-          </div>
-          <div ngxSlickItem class="slide">
-            <img class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc6SOp1H83BiFlux_V0qJ71PkIQobkoigC_2gIseirmapA4vV6"
-              alt="" width="100%" />
-            <div class="name">Why</div>
+            <div class="name">{{ favArtist.artist_name }}</div>
           </div>
         </ngx-slick>
       </div>
     </div>
-  </div>
+
 
 </div>
