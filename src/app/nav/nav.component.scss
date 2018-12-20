@@ -1,6 +1,12 @@
 .navbar-default {
   background-color: transparent;
   border-color: transparent;
+  &.desktop {
+
+    @media(max-width:767px) {
+      display:none;
+    }
+  }
 }
 
 .navbar-default .navbar-nav>li>a {
@@ -8,5 +14,35 @@
   text-shadow: 1px 1px 1px #000;
   &:hover {
     text-shadow: none;
+  }
+}
+
+.navbar-default {
+  background-color: transparent;
+  border-color: transparent;
+  &.mobile {
+    display:none;
+    @media(max-width:767px) {
+      display:block;
+    }
+    .nav {
+      &.navbar-nav {
+          display:none;
+        &.active{
+          display:block;
+        }
+      }
+    }
+    .mobile-nav-icon {
+      margin:1rem;
+      color:#d0d3c5;
+      text-shadow: 1px 1px 1px #000;
+      display: inline-block;
+      font-size: 3rem;
+      cursor:pointer;
+      &:active, &:hover {
+        text-shadow: none;
+      }
+    }
   }
 }

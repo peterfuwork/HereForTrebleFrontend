@@ -21,26 +21,46 @@
             <form>
                 <div class="profileInfo">
                   <span class="title">First Name:</span>
-                  <input type="text" placeholder="first name" />
+                  <input
+                    type="text"
+                    placeholder="New First Name"
+                    name="firstName"
+                    [(ngModel)]="firstName" />
                 </div>
                 <div class="profileInfo">
                   <span class="title">Last Name:</span>
-                  <input type="text" placeholder="last name" />
+                  <input
+                    type="text"
+                    placeholder="New Last Name"
+                    name="lastName"
+                    [(ngModel)]="lastName" />
                 </div>
                 <div class="profileInfo">
                   <span class="title">Email:</span>
-                  <input type="text" placeholder="email" />
+                  <input
+                    type="text"
+                    placeholder="New Email"
+                    name="email"
+                    [(ngModel)]="email" />
                 </div>
                 <div class="profileInfo">
                   <span class="title">Password:</span>
-                  <input type="password" placeholder="password" />
+                  <input
+                    type="password"
+                    placeholder="New Password"
+                    name=password
+                    [(ngModel)]="password" />
                 </div>
                 <div class="profileInfo">
                   <span class="title">Image:</span>
-                  <input type="file" placeholder="new image" />
+                  <input
+                    type="text"
+                    placeholder="New Image"
+                    name="image"
+                    [(ngModel)]="image" />
                 </div>
                 <div class="profileInfo">
-                  <button (click)="onClickSave($event)">Submit</button>
+                  <button (click)="onClickSave($event)">Save</button>
                 </div>
             </form>
           </div>

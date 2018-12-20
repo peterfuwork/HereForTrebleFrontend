@@ -1,3 +1,35 @@
-<p>
-  signup works!
-</p>
+<div class="signup-form">
+  <form (submit)="onSubmitForm($event)" class="form">
+    <input
+      class="input"
+      type="text"
+      placeholder="First Name"
+      name="firstName"
+      [(ngModel)]="firstName" />
+    <input
+      class="input"
+      type="text"
+      placeholder="Last Name"
+      name="lastName"
+      [(ngModel)]="lastName" />
+    <input
+      class="input"
+      type="text"
+      placeholder="Email"
+      name="email"
+      [(ngModel)]="email" />
+    <input
+      class="input"
+      type="password"
+      placeholder="Password"
+      name="password"
+      [(ngModel)]="password" />
+    <input
+      class="input"
+      type="text"
+      placeholder="Avatar"
+      name="image"
+      [(ngModel)]="image" />
+    <button>Sign Up</button>
+  </form>
+</div>

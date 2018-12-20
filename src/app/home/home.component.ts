@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
     'slidesToScroll': 1,
     'autoplay': true,
     'dots': true,
-    'speed': 300,
+    'speed': 600,
     'responsive': [
       {
         breakpoint: 1024,
@@ -55,7 +55,7 @@ export class HomeComponent implements OnInit {
   artist_name = 'Taylor';
   private _url = `https://spotify-graphql-server.herokuapp.com/graphql?query=%7B%0A%20%20queryArtists(byName%3A%22${this.artist_name}%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20id%0A%20%20%20%20image%0A%20%20%7D%0A%7D%0A`;
   constructor(private httpClient: HttpClient) {
-    this.userId = 1;
+    this.userId = 5;
   }
 
   ngOnInit() {

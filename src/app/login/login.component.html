@@ -1,0 +1,17 @@
+<div class="login-form">
+    <form (submit)="onSubmitLogIn($event)" class="form">
+      <input
+        class="input"
+        type="text"
+        placeholder="Email"
+        name="email"
+        [(ngModel)]="email" />
+      <input
+        class="input"
+        type="password"
+        placeholder="Password"
+        name="password"
+        [(ngModel)]="password" />
+      <button>Log In</button>
+    </form>
+</div>

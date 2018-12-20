@@ -12,4 +12,15 @@ export class NavComponent implements OnInit {
   ngOnInit() {
   }
 
+  onMobileNavToggle(event: Event) {
+    event.preventDefault();
+    (<HTMLInputElement>event.target).parentElement.nextElementSibling.classList.toggle('active');
+  }
+
+  removeActive(event: Event) {
+    event.preventDefault();
+    (<HTMLInputElement>event.target).parentElement.parentElement.classList.toggle('active');
+  }
+
+
 }

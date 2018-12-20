@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default desktop">
   <div class="container-fluid">
     <div class="navbar-header">
         <a href="#" class="navbar-brand">Angular</a>
@@ -10,8 +10,22 @@
         <li><a routerLink="/matches">Matches</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#" role="button">Login</a></li>
-        <li><a routerLink="/signup"role="button">Sign up</a></li>
+        <li><a routerLink="/login" role="button">Login</a></li>
+        <li><a routerLink="/signup" role="button">Sign up</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<nav class="navbar navbar-default mobile">
+  <div class="container-fluid">
+    <div class="navbar-default">
+      <a class="mobile-nav-icon" href="#" (click)="onMobileNavToggle($event)"><span class="fa fa-bars"></span></a>
+      <ul class="nav navbar-nav">
+        <li class="mobile-nav-li"><a routerLink="" (click)="removeActive($event)">Home</a></li>
+        <li class="mobile-nav-li"><a routerLink="/profile" (click)="removeActive($event)">Profile</a></li>
+        <li class="mobile-nav-li"><a routerLink="/matches" (click)="removeActive($event)">Matches</a></li>
+        <li class="mobile-nav-li"><a routerLink="/login" (click)="removeActive($event)">Login</a></li>
+        <li class="mobile-nav-li"><a routerLink="/signup" (click)="removeActive($event)">Sign up</a></li>
       </ul>
     </div>
   </div>
