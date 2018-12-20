@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+// import { ChartService } from './chart.service';
+import { Chart } from 'chart.js';
 
 @Component({
   selector: 'app-matches',
