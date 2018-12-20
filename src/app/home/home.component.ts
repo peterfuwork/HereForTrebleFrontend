@@ -56,7 +56,9 @@ export class HomeComponent implements OnInit {
   private _url = `https://spotify-graphql-server.herokuapp.com/graphql?query=%7B%0A%20%20queryArtists(byName%3A%22${this.artist_name}%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20id%0A%20%20%20%20image%0A%20%20%7D%0A%7D%0A`;
   constructor(private httpClient: HttpClient) {
     this.userId = 1;
+  }
 
+  ngOnInit() {
     this.httpClient.get(`http://herefortreble.herokuapp.com/joins/${this.userId}`)
     .toPromise()
     .then(data => {
@@ -89,9 +91,6 @@ export class HomeComponent implements OnInit {
       console.log('this.artistsArr', this.artistsArr);
     })
     .catch(console.log);
-  }
-
-  ngOnInit() {
   }
 
   onSearchArtist(event: Event) {
@@ -195,17 +194,13 @@ export class HomeComponent implements OnInit {
           })
         }).toPromise()
         .then(data => {
+          const index = this.userFavArtists.indexOf(spotify_id);
+          this.userFavArtists.splice(index, 1);
           console.log(data);
         });
 
       }
       console.log('artistsArr', this.artistsArr);
     });
-
-    // this.httpClient.delete(`http://herefortreble.herokuapp.com/joins/${join_id}`)
-    // .toPromise()
-    // .then(data => {
-    //   console.log('data', data);
-    // });
   }
 }
