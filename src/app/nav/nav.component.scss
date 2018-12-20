@@ -1,4 +1,4 @@
-.navbar-default {
+.navbar-default{
   background-color: transparent;
   border-color: transparent;
   &.desktop {
@@ -9,8 +9,8 @@
   }
 }
 
-.navbar-default .navbar-nav>li>a {
-  color: #d0d3c5;
+.navbar-brand, .navbar-default .navbar-nav>li>a {
+  color: #ffffff;
   text-shadow: 1px 1px 1px #000;
   &:hover {
     text-shadow: none;
@@ -35,7 +35,7 @@
     }
     .mobile-nav-icon {
       margin:1rem;
-      color:#d0d3c5;
+      color:#ffffff;
       text-shadow: 1px 1px 1px #000;
       display: inline-block;
       font-size: 3rem;
