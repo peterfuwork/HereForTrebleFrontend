@@ -32,6 +32,7 @@ import { LoginComponent } from './login/login.component';
     SlickModule.forRoot()
   ],
   providers: [
+    // ChartService
   ],
   bootstrap: [AppComponent]
 })

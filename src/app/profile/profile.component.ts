@@ -57,7 +57,7 @@ export class ProfileComponent implements OnInit {
   };
 
   constructor(private httpClient: HttpClient) {
-    this.userId = 5;
+    this.userId = 1;
   }
 
   ngOnInit() {
