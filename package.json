@@ -25,6 +25,7 @@
     "jquery": "^3.3.1",
     "ng": "0.0.0",
     "ng-lazyload-image": "^5.0.0",
+    "ng2-charts": "^1.6.0",
     "ngx-slick": "^0.2.1",
     "rxjs": "~6.3.3",
     "slick-carousel": "^1.8.1",
