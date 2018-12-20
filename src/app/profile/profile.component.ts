@@ -53,7 +53,7 @@ export class ProfileComponent implements OnInit {
   };
 
   constructor(private httpClient: HttpClient) {
-    this.userId = 4;
+    this.userId = 1;
     this.httpClient.get(`http://herefortreble.herokuapp.com/joins/${this.userId}`)
     .toPromise()
     .then(data => {
@@ -78,9 +78,5 @@ export class ProfileComponent implements OnInit {
   onClickSave(event: Event) {
     event.preventDefault();
     this.checkForEdit = false;
-  }
-
-  afterChange(e) {
-    console.log('afterChange');
   }
 }

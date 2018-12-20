@@ -1,0 +1,12 @@
+.navbar-default {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: #d0d3c5;
+  text-shadow: 1px 1px 1px #000;
+  &:hover {
+    text-shadow: none;
+  }
+}

@@ -50,7 +50,7 @@
     <div class="col-sm-4 carouselProfile">
       <div class="carouselProfileWrapper">
         <h2>Loved Artists</h2>
-        <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig" (afterChange)="afterChange($event)">
+        <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig">
           <div ngxSlickItem *ngFor="let favArtist of userInfoWithFavArtists" class="slide">
             <img class="img" src="{{ favArtist.artist_img }}"
               alt="" width="100%" />
