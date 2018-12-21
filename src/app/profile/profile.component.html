@@ -70,13 +70,18 @@
     <div class="col-sm-4 carouselProfile">
       <div class="carouselProfileWrapper">
         <h2>Loved Artists</h2>
-        <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig">
-          <div ngxSlickItem *ngFor="let favArtist of userInfoWithFavArtists" class="slide">
-            <img class="img" src="{{ favArtist.artist_img }}"
-              alt="" width="100%" />
-            <div class="name">{{ favArtist.artist_name }}</div>
-          </div>
-        </ngx-slick>
+        <div class="showSpinner" *ngIf="showSpinner; else showCarousel">
+          <img class="loading" src="./assets/loading.gif" alt="loading"/>
+        </div>
+        <ng-template #showCarousel>
+          <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig">
+            <div ngxSlickItem *ngFor="let favArtist of userInfoWithFavArtists" class="slide">
+              <img class="img" src="{{ favArtist.artist_img }}"
+                alt="" width="100%" />
+              <div class="name">{{ favArtist.artist_name }}</div>
+            </div>
+          </ngx-slick>
+        </ng-template>
       </div>
     </div>
 

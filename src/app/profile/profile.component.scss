@@ -101,10 +101,19 @@
                     margin: 0 auto;
                 }
                 .name{
+                  margin:1rem 0;
                   text-align:center;
                 }
             }
         }
       }
     }
+
+    .showSpinner {
+      text-align:center;
+      .loading {
+        width:50px;
+      }
+    }
+
 }

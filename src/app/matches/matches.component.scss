@@ -1,3 +1,35 @@
-canvas {
+.match {
+  margin-bottom:1rem;
+  .user-profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem 0;
+    @media(max-width: 767px) {
+      align-items: center;
+    }
+    .user-info {
+      font-size: 1.7rem;
+      margin: 0 0 1rem;
+      .title {
+        font-weight:bold;
+      }
+      .value {
+
+      }
+    }
+    &.picture-grid {
+      align-items: center;
+    }
+  }
+  .avatar-wrapper {
+    .avatar {
+      width:100px;
+    }
+  }
+  canvas {
     color: white;
+  }
 }
+
+

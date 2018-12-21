@@ -31,9 +31,7 @@ import { LoginComponent } from './login/login.component';
     ChartsModule,
     SlickModule.forRoot()
   ],
-  providers: [
-    // ChartService
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -32,7 +32,6 @@ export class SignupComponent implements OnInit {
       })
     }).toPromise()
     .then(data => {
-        console.log(data);
         this.image = '';
         this.firstName = '';
         this.lastName = '';

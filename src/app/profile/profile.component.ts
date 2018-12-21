@@ -16,6 +16,7 @@ export class ProfileComponent implements OnInit {
   email = '';
   password = '';
   checkForEdit = false;
+  public showSpinner = true;
 
   slideConfig = {
     'slidesToShow': 4,
@@ -57,7 +58,7 @@ export class ProfileComponent implements OnInit {
   };
 
   constructor(private httpClient: HttpClient) {
-    this.userId = 1;
+    this.userId = 3;
   }
 
   ngOnInit() {
@@ -71,8 +72,6 @@ export class ProfileComponent implements OnInit {
           this.lastName = this.userInfoWithFavArtists[0].last_name;
           this.email = this.userInfoWithFavArtists[0].email;
           this.password = this.userInfoWithFavArtists[0].password;
-
-          console.log(this.userInfoWithFavArtists);
           this.httpClient.get(`http://herefortreble.herokuapp.com/joins/${this.userId}`)
           .toPromise()
           .then(data => {
@@ -82,6 +81,7 @@ export class ProfileComponent implements OnInit {
               this.lastName = data[0].last_name;
               this.email = data[0].email;
               this.password = data[0].password;
+              this.showSpinner = false;
           }).catch(console.log);
 
         });

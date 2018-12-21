@@ -55,7 +55,7 @@ export class HomeComponent implements OnInit {
   artist_name = 'Taylor';
   private _url = `https://spotify-graphql-server.herokuapp.com/graphql?query=%7B%0A%20%20queryArtists(byName%3A%22${this.artist_name}%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20id%0A%20%20%20%20image%0A%20%20%7D%0A%7D%0A`;
   constructor(private httpClient: HttpClient) {
-    this.userId = 1;
+    this.userId = 3;
   }
 
   ngOnInit() {
@@ -66,7 +66,6 @@ export class HomeComponent implements OnInit {
       this.userInfoWithFavArtists.map(artist => {
         this.userFavArtists.push((artist.spotify_id));
       });
-        console.log('userFavArtists', this.userFavArtists);
     })
     .catch(console.log);
 
@@ -88,7 +87,6 @@ export class HomeComponent implements OnInit {
         }
         return newObj;
       });
-      console.log('this.artistsArr', this.artistsArr);
     })
     .catch(console.log);
   }
@@ -101,7 +99,6 @@ export class HomeComponent implements OnInit {
     .then(data => {
       this.showSpinner = false;
       this.artistsObj = data;
-      console.log('userFavArtists', this.userFavArtists);
       this.artistsArr = this.artistsObj.data.queryArtists.map(artist => {
         const newObj = Object.assign({}, artist);
         for (let i = 0; i < this.userFavArtists.length; i++) {
@@ -144,7 +141,6 @@ export class HomeComponent implements OnInit {
         })
       }).toPromise()
       .then(data => {
-        console.log(data);
       });
     });
 
@@ -157,11 +153,7 @@ export class HomeComponent implements OnInit {
         this.artistsArr[i].liked = true;
       }
     }
-
     this.userFavArtists.push(spotify_id);
-
-    console.log(i);
-    console.log('artistsArr', this.artistsArr);
   }
   onUnsaveArtist(event: Event, spotify_id: string) {
 
@@ -172,7 +164,6 @@ export class HomeComponent implements OnInit {
         const currentUserData = data.filter(user => {
           return user.user_id === this.userId;
         });
-        console.log('data', currentUserData);
 
         const i = this.artistsArr.findIndex((artist) => {
           return artist.id === spotify_id;
@@ -182,12 +173,9 @@ export class HomeComponent implements OnInit {
             this.artistsArr[i].liked = false;
           }
         }
-
         const join_obj = currentUserData.filter(function(obj) {
           return obj.spotify_id === spotify_id;
         });
-
-        console.log('join_obj[0].id', join_obj[0].id);
         this.httpClient.delete(`http://herefortreble.herokuapp.com/joins/${join_obj[0].id}`, {
           headers: new HttpHeaders({
             'Content-Type':  'application/json'
@@ -196,11 +184,8 @@ export class HomeComponent implements OnInit {
         .then(data => {
           const index = this.userFavArtists.indexOf(spotify_id);
           this.userFavArtists.splice(index, 1);
-          console.log(data);
         });
-
       }
-      console.log('artistsArr', this.artistsArr);
     });
   }
 }

@@ -1,9 +1,44 @@
-<div style="width: 40%;">
-  <canvas
-      baseChart
-      [chartType]="'doughnut'"
-      [datasets]="Data"
-      [labels]="Labels"
-      [options]="chartOptions">
-  </canvas>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 match">
+        <div class="user-profile picture-grid col-sm-4">
+          <div class="avatar-wrapper">
+            <img class="avatar" src="{{ currentUserData.avatar }}" />
+          </div>
+        </div>
+        <div class="user-profile col-sm-4">
+            <div class="user-info">
+              <span class="value">Hello, {{ currentUserData.first_name }},</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12">
+      <hr />
+    </div>
+    <div class="col-xs-12 match" *ngFor="let user of otherUsersData">
+      <div class="user-profile picture-grid col-sm-4">
+        <div class="avatar-wrapper">
+          <img class="avatar" src="{{ user.avatar }}" />
+        </div>
+      </div>
+      <div class="user-profile col-sm-4">
+        <div class="user-info">
+          <span class="title">Match:&nbsp;</span>
+          <span class="value">{{ user.percentage.toFixed(2) }}%</span>
+        </div>
+        <div class="user-info">
+          <span class="value">{{ user.first_name }}</span>
+        </div>
+      </div>
+      <div class="user-profile col-sm-4">
+          <canvas
+            baseChart
+            [chartType]="'pie'"
+            [datasets]="[{data: [100 - user.percentage, user.percentage]}]"
+            [labels]="Labels"
+            [options]="chartOptions">
+          </canvas>
+      </div>
+    </div>
+  </div>
 </div>
