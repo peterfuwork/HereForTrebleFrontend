@@ -1,4 +1,4 @@
-# Here For Terble
+# Here For Treble
 
 * Here For Treble is an application that takes users favorite artist and matches you against other users with the same artist.
 
